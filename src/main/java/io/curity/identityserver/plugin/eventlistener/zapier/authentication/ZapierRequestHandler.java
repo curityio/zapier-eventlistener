@@ -31,7 +31,7 @@ public class ZapierRequestHandler implements AuthenticatorRequestHandler<Request
         Map<String, Object> dataMap = _configuration.json().fromJson(request.getBodyAsString());
         if (dataMap.get("target_url") != null)
         {
-            _configuration.bucketDataAccessProvider().storeAttributes("target_url", "zapier", dataMap);
+            _configuration.bucket().storeAttributes("target_url", "zapier", dataMap);
         }
         return Optional.empty();
     }

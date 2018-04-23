@@ -20,8 +20,8 @@ import io.curity.identityserver.plugin.eventlistener.zapier.config.EventListener
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.curity.identityserver.sdk.data.events.AuditableEvent;
-import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
 import se.curity.identityserver.sdk.event.EventListener;
+import se.curity.identityserver.sdk.service.Bucket;
 import se.curity.identityserver.sdk.service.ExceptionFactory;
 import se.curity.identityserver.sdk.service.Json;
 
@@ -29,13 +29,13 @@ public class ZapierEventListener implements EventListener<AuditableEvent>
 {
     private static final Logger _logger = LoggerFactory.getLogger(ZapierEventListener.class);
     private final ExceptionFactory _exceptionFactory;
-    private final BucketDataAccessProvider _bucketDataAccessProvider;
+    private final Bucket _bucket;
     private final Json _json;
 
     public ZapierEventListener(EventListenerConfiguration config)
     {
         _exceptionFactory = config.exceptionFactory();
-        _bucketDataAccessProvider = config.bucketDataAccessProvider();
+        _bucket = config.getBucket();
         _json = config.json();
 
     }

@@ -17,13 +17,13 @@
 package io.curity.identityserver.plugin.eventlistener.zapier.config;
 
 import se.curity.identityserver.sdk.config.Configuration;
-import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
+import se.curity.identityserver.sdk.service.Bucket;
 import se.curity.identityserver.sdk.service.Json;
 
 @SuppressWarnings("InterfaceNeverImplemented")
 public interface AuthenticatorConfiguration extends Configuration
 {
-    BucketDataAccessProvider bucketDataAccessProvider();
+    Bucket bucket();
 
     Json json();
 

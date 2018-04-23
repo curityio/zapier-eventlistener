@@ -19,8 +19,7 @@ package io.curity.identityserver.plugin.eventlistener.zapier.config;
 import se.curity.identityserver.sdk.config.Configuration;
 import se.curity.identityserver.sdk.config.annotation.DefaultBoolean;
 import se.curity.identityserver.sdk.config.annotation.Description;
-import se.curity.identityserver.sdk.config.annotation.RangeConstraint;
-import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
+import se.curity.identityserver.sdk.service.Bucket;
 import se.curity.identityserver.sdk.service.ExceptionFactory;
 import se.curity.identityserver.sdk.service.Json;
 
@@ -33,7 +32,6 @@ public interface EventListenerConfiguration extends Configuration
     @DefaultBoolean(false)
     boolean isHandleAccountCreatedScimEvent();
 
-    @RangeConstraint(min = 1)
     List<Events> handleEvents();
 
     enum Events
@@ -47,7 +45,7 @@ public interface EventListenerConfiguration extends Configuration
 
     ExceptionFactory exceptionFactory();
 
-    BucketDataAccessProvider bucketDataAccessProvider();
+    Bucket getBucket();
 
     Json json();
 }
