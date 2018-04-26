@@ -21,9 +21,12 @@ import se.curity.identityserver.sdk.config.annotation.DefaultBoolean;
 import se.curity.identityserver.sdk.config.annotation.Description;
 import se.curity.identityserver.sdk.service.Bucket;
 import se.curity.identityserver.sdk.service.ExceptionFactory;
+import se.curity.identityserver.sdk.service.HttpClient;
 import se.curity.identityserver.sdk.service.Json;
+import se.curity.identityserver.sdk.service.WebServiceClientFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 @SuppressWarnings("InterfaceNeverImplemented")
 public interface EventListenerConfiguration extends Configuration
@@ -48,4 +51,12 @@ public interface EventListenerConfiguration extends Configuration
     Bucket getBucket();
 
     Json json();
+
+    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to zapier")
+    Optional<HttpClient> getHttpClient();
+
+
+    WebServiceClientFactory getWebServiceClientFactory();
+
+    ExceptionFactory getExceptionFactory();
 }

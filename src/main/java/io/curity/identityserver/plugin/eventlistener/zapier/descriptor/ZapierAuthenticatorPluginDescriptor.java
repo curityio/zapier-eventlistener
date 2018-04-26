@@ -18,6 +18,7 @@ package io.curity.identityserver.plugin.eventlistener.zapier.descriptor;
 
 import io.curity.identityserver.plugin.eventlistener.zapier.authentication.ZapierRequestHandler;
 import io.curity.identityserver.plugin.eventlistener.zapier.config.AuthenticatorConfiguration;
+import se.curity.identityserver.sdk.authentication.AnonymousRequestHandler;
 import se.curity.identityserver.sdk.authentication.AuthenticatorRequestHandler;
 import se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor;
 
@@ -41,6 +42,12 @@ public final class ZapierAuthenticatorPluginDescriptor
 
     @Override
     public Map<String, Class<? extends AuthenticatorRequestHandler<?>>> getAuthenticationRequestHandlerTypes()
+    {
+        return Collections.emptyMap();
+    }
+
+    @Override
+    public Map<String, Class<? extends AnonymousRequestHandler<?>>> getAnonymousRequestHandlerTypes()
     {
         return Collections.unmodifiableMap(Collections.singletonMap("index", ZapierRequestHandler.class));
     }

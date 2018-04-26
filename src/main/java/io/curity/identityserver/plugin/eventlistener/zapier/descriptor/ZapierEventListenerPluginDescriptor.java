@@ -38,7 +38,7 @@ public final class ZapierEventListenerPluginDescriptor implements EventListenerP
     @Override
     public String getPluginImplementationType()
     {
-        return "zapier";
+        return "zapier-event-listener";
     }
 
     @Override
