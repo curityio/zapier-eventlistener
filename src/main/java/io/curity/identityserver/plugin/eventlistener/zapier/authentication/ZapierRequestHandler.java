@@ -46,6 +46,10 @@ public class ZapierRequestHandler implements AnonymousRequestHandler<Request>
         {
             _configuration.bucket().storeAttributes("target_url", "zapier", dataMap);
         }
+        else if ((Boolean) dataMap.get("unsubscribe"))
+        {
+            _configuration.bucket().clearBucket("target_url", "zapier");
+        }
 
         return null;
     }
