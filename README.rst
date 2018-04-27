@@ -1,8 +1,11 @@
-Zapier Event Listener Plug-in
-=============================
+WIP: Zapier Event Listener Plug-in
+==================================
 
 .. image:: https://travis-ci.org/curityio/zapier-eventlistener.svg?branch=master
      :target: https://travis-ci.org/curityio/zapier-eventlistener
+
+ .. Note::
+     This plugin is still a work in progress.
 
 This project provides an opens source Zapier Event Listener plug-in for the Curity Identity Server.
 
